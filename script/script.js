@@ -50,6 +50,7 @@ const app = Vue.createApp({
         },
         dateList() {
             let entry = this.entry["detail"]
+            // date is a temp array for checking
             let date = [], dayList = [], count = 0;
             for(let i in entry){
                 // if it doesn't exist yet in the 'date'
@@ -78,7 +79,7 @@ const app = Vue.createApp({
     methods: {
         addEntry(){
             let d = new Date;
-            let time = d.getHours() + ":" + d.getMinutes()
+            let time = (d.getHours() < 10 ? "0"+d.getHours() : d.getHours()) + ":" + (d.getMinutes() < 10 ? "0"+d.getMinutes() : d.getMinutes())
             let newEntry = {
                 "jam": time,
                 "tanggal": "19 Februari 2021",

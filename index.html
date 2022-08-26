@@ -11,7 +11,7 @@
         <!-- title -->
         <div class="title text-center mt-5 mb-5">
             <h1>Diari Jajan Februari 2021</h1>
-            <h3>Pengeluaran Bulan Ini Rp {{totalExpense}}</h3>
+            <h3>Pengeluaran Bulan Ini Rp {{(totalExpense).toLocaleString('en-US', {valute: 'USD'})}}</h3>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEntry">
                 Tambah Item
             </button>
@@ -19,7 +19,7 @@
 
         <!-- card -->
         <div class="row g-2">
-            <div class="col col-md-3 col-6  col-md-offset-2" v-for="date in dateList">
+            <div class="col-12 col-sm-6 col-lg-3" v-for="date in dateList">
                 <div class="content">
                     <p><strong>{{date.date}}</strong></p>
                     <div class="card-body">
@@ -29,14 +29,14 @@
                             class="list-group-item" 
                             v-for="list in date.data">
                                 <div class="row">
-                                    <p class="col-8">{{list.jam}} {{list.nama}}</p> <span class="col text-end">Rp {{list.pengeluaraan}}</span>
+                                    <p class="col-8">{{list.jam}} {{list.nama}}</p> <span class="col text-end">Rp {{(list.pengeluaraan).toLocaleString('en-US', {valute: 'USD'})}}</span>
                                 </div>
                             </li>
                         </ul>
                         <hr>
                         <div class="row justify-content-end text-end">
                             <p class="col"><strong>Total</strong></p>
-                            <p class="col"><strong>Rp {{date.total}}</strong></p>
+                            <p class="col"><strong>Rp {{(date.total).toLocaleString('en-US', {valute: 'USD'})}}</strong></p>
                         </div>
                     </div>
                 </div>
