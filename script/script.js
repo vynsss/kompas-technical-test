@@ -51,7 +51,7 @@ const app = Vue.createApp({
         dateList() {
             let entry = this.entry["detail"]
             // date is a temp array for checking
-            let date = [], dayList = [], count = 0;
+            let date = [], dayList = [];
             for(let i in entry){
                 // if it doesn't exist yet in the 'date'
                 if(!date.includes(entry[i].tanggal)) {
