@@ -61,11 +61,9 @@ const app = Vue.createApp({
                         data:[entry[i]],
                         total: entry[i].pengeluaraan
                     })
-                    // since the list is in descending order, this will occur every time the date array +1 in length
-                    count++
                 } else {
-                    dayList[count-1].data.push(entry[i]);
-                    dayList[count-1].total += entry[i].pengeluaraan
+                    dayList[date.length-1].data.push(entry[i]);
+                    dayList[date.length-1].total += entry[i].pengeluaraan
                 }
             }
             return dayList
